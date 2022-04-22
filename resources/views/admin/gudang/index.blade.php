@@ -1,6 +1,8 @@
 <x-app-layout>
 	<x-slot name="title">Daftar Gudang</x-slot>
 
+	<x-alert-error></x-alert-error>
+
 	@if(session()->has('success'))
 	<x-alert type="success" message="{{ session()->get('success') }}" />
 	@endif

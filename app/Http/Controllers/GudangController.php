@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\{Gudang, Barang};
 use Illuminate\Http\Request;
+use App\Http\Requests\GudangRequest;
 
 class GudangController extends Controller
 {
@@ -20,7 +21,7 @@ class GudangController extends Controller
     	return view('admin.gudang.index', compact('data'));
     }
 
-    public function store(Gudang $gudang, Request $request)
+    public function store(Gudang $gudang, GudangRequest $request)
     {
     	$gudang->create($request->all());
 
@@ -33,16 +34,16 @@ class GudangController extends Controller
     	return $gudang->find(request('id'));
     }
 
-    public function update(Gudang $gudang, Request $request)
+    public function update(Gudang $gudang, GudangRequest $request)
     {
     	$gudang->find($request->id)->update($request->all());
 
     	return back();
     }
 
-    public function destroy(Gudang $gudang, Request $request)
+    public function destroy(Gudang $gudang, $id)
     {
-    	$data = $gudang->find($request->id);
+    	$data = $gudang->find($id);
         Barang::where('gudang_id', $data->id)->delete();
         $data->delete();
 

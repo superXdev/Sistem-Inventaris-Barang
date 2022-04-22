@@ -12,7 +12,6 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "nwidart/laravel-modules": "^8.2",
         "spatie/laravel-activitylog": "^3.17",
         "spatie/laravel-permission": "^4.0"
     },

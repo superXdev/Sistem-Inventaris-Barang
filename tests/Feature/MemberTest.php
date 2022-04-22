@@ -27,7 +27,7 @@ class MemberTest extends TestCase
 
         $response = $this->actingAs($user)->post(route('admin.member.create'), [
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'username' => $user->username,
             'password' => 'password',
             'confirm-password' => 'password',
             'roles' => 'Admin'
@@ -43,7 +43,7 @@ class MemberTest extends TestCase
 
         $response = $this->actingAs($admin)->post(route('admin.member.update', $user->id), [
             'name' => 'This is User',
-            'email' => $user->email,
+            'username' => $user->username,
             'password' => 'password',
             'confirm-password' => 'password',
             'roles' => 'Admin'

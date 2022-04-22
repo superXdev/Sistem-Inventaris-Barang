@@ -42,6 +42,7 @@ class DashboardController extends Controller
             $logs = Activity::with('causer')->where('causer_id', auth()->id())->latest()->paginate(10);
         }
         // dd($logs->first()->causer->username);
+        // dd($logs);
 
         return view('admin.logs', compact('logs'));
     }

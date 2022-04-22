@@ -46,7 +46,7 @@
 						<td class="text-center">empty</td>
 						@endif
 					</td>
-					<td>{{ $log->causer->name }} ({{ $log->causer->username }})</td>
+					<td>{{ ($log->causer) ? $log->causer->name : "none" }} ({{ ($log->causer) ? $log->causer->username : "none" }})</td>
 					<td>{{ $log->created_at->format('d-M-Y H:m:s') }}</td>
 				</tr>
 				@empty

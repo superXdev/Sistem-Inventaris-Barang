@@ -30,7 +30,7 @@ class OutcomingGoodsTest extends TestCase
         $response = $this->actingAs($user)->post(route('admin.barang-keluar.store'), [
             'penerima' => 'Juned', 
             'berat' => 2,
-            'harga' => 25000, 
+            'harga' => '25,000', 
             'jumlah' => 10,
             'barang_id' => $barang->id
         ]);
@@ -67,7 +67,7 @@ class OutcomingGoodsTest extends TestCase
         $response = $this->actingAs($user)->post(route('admin.barang-keluar.store'), [
             'penerima' => 'Juned', 
             'berat' => 2,
-            'harga' => 25000, 
+            'harga' => '25,000', 
             'jumlah' => -10,
             'barang_id' => $barang->id
         ]);
@@ -89,7 +89,7 @@ class OutcomingGoodsTest extends TestCase
             'id' => $barang_keluar->id,
             'penerima' => 'Ahmad', 
             'berat' => 2,
-            'harga' => 25000, 
+            'harga' => '25,000', 
             'jumlah' => 10,
             'barang_id' => $barang->id
         ]);

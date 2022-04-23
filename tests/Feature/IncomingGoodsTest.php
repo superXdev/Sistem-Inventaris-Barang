@@ -32,7 +32,7 @@ class IncomingGoodsTest extends TestCase
             'supplier_id' => $supplier->id, 
             'berat' => 2, 
             'barang_id' => $barang->id, 
-            'harga' => 20000,
+            'harga' => '20,000',
             'jumlah' => 10
         ]);
 
@@ -71,7 +71,7 @@ class IncomingGoodsTest extends TestCase
             'supplier_id' => $supplier->id, 
             'berat' => 2, 
             'barang_id' => $barang->id, 
-            'harga' => 20000,
+            'harga' => '20,000',
             'jumlah' => -1
         ]);
 
@@ -93,7 +93,7 @@ class IncomingGoodsTest extends TestCase
 
         $response = $this->actingAs($admin)->post(route('admin.barang-masuk.update'), [
             'berat' => 2,
-            'harga' => 22000,
+            'harga' => '22,000',
             'jumlah' => 5
         ]);
 

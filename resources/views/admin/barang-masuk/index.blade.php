@@ -1,6 +1,8 @@
 <x-app-layout>
 	<x-slot name="title">Daftar Barang Masuk</x-slot>
 
+	<x-alert-error></x-alert-error>
+
 	@if(session()->has('success'))
 	<x-alert type="success" message="{{ session()->get('success') }}" />
 	@endif
@@ -22,7 +24,7 @@
 				<th></th>
 			</thead>
 			<tbody>
-				@forelse ($data as $row)
+				@foreach ($data as $row)
 					<tr>
 						<td>{{ $row->supplier->nama }}</td>
 						<td>{{ $row->barang->nama }}</td>
@@ -38,11 +40,7 @@
 						</form>
 						</td>
 					</tr>
-				@empty
-				<tr>
-					<td colspan="7">No Data</td>
-				</tr>
-				@endforelse
+				@endforeach
 				
 			</tbody>
 		</table>

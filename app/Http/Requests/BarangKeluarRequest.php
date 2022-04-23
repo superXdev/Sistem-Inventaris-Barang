@@ -27,7 +27,7 @@ class BarangKeluarRequest extends FormRequest
             'penerima' => 'required|string', 
             'berat' => 'required|numeric|gt:0', 
             'barang_id' => 'required|numeric|gt:0', 
-            'harga' => 'required|numeric|gt:0', 
+            'harga' => 'required|string', 
             'jumlah' => 'required|numeric|gt:0'
         ];
     }

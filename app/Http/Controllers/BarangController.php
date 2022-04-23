@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\{Barang, Gudang};
 use Illuminate\Http\Request;
+use App\Http\Requests\BarangRequest;
 
 class BarangController extends Controller
 {
@@ -30,7 +31,7 @@ class BarangController extends Controller
     	return view('admin.barang.index', compact('data', 'gudang'));
     }
 
-    public function store(Barang $barang, Gudang $gudang, Request $request)
+    public function store(Barang $barang, Gudang $gudang, BarangRequest $request)
     {
     	$barang->create($request->all());
 
@@ -50,16 +51,16 @@ class BarangController extends Controller
     	];
     }
 
-    public function update(Barang $barang, Request $request)
+    public function update(Barang $barang, BarangRequest $request)
     {
     	$barang->find($request->id)->update($request->all());
 
     	return back();
     }
 
-    public function destroy(Barang $barang, Request $request)
+    public function destroy(Barang $barang, $id)
     {
-    	$data = $barang->find($request->id);
+    	$data = $barang->find($id);
     	$data->delete();
 
     	return back();

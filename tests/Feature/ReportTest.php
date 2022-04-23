@@ -17,13 +17,4 @@ class ReportTest extends TestCase
 
         $response->assertStatus(200);
     }
-
-    public function test_unauthorized_user_can_not_access()
-    {
-        $user = User::factory()->create();
-
-        $response = $this->actingAs($user)->get(route('admin.laporan.index'));
-
-        $response->assertStatus(403);
-    }
 }

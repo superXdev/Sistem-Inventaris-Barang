@@ -22,7 +22,7 @@
 				<th></th>
 			</thead>
 			<tbody>
-				@foreach ($data as $row)
+				@forelse ($data as $row)
 					<tr>
 						<td>{{ $row->supplier->nama }}</td>
 						<td>{{ $row->barang->nama }}</td>
@@ -38,7 +38,11 @@
 						</form>
 						</td>
 					</tr>
-				@endforeach
+				@empty
+				<tr>
+					<td colspan="7">No Data</td>
+				</tr>
+				@endforelse
 				
 			</tbody>
 		</table>

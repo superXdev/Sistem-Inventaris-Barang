@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\{Supplier, Barang, BarangMasuk, Laporan};
 use Illuminate\Http\Request;
+use App\Http\Requests\BarangMasukRequest;
 
 class BarangMasukController extends Controller
 {
@@ -23,7 +24,7 @@ class BarangMasukController extends Controller
     	return view('admin.barang-masuk.index', compact('data', 'supplier', 'barang'));
     }
 
-    public function store(BarangMasuk $barang_masuk, Request $request)
+    public function store(BarangMasuk $barang_masuk, BarangMasukRequest $request)
     {
     	$result = $barang_masuk->create($request->all());
     	Barang::find($request->barang_id)->increment('jumlah', $request->jumlah);
@@ -50,7 +51,7 @@ class BarangMasukController extends Controller
     	return $data;
     }
 
-    public function update(BarangMasuk $barang_masuk, Request $request)
+    public function update(BarangMasuk $barang_masuk, BarangMasukRequest $request)
     {
     	$result = $barang_masuk->find($request->id);
 
@@ -74,9 +75,9 @@ class BarangMasukController extends Controller
     	return back()->with('success', 'Stok berhasil di update');
     }
 
-    public function destroy(BarangMasuk $barang_masuk, Request $request)
+    public function destroy(BarangMasuk $barang_masuk, $id)
     {
-    	$data = $barang_masuk->find($request->id);
+    	$data = $barang_masuk->find($id);
         $data->barang->decrement('jumlah', $data->jumlah);
     	Laporan::where('jenis', 'Barang Masuk')->where('root_id', $data->id)->delete();
     	$data->delete();

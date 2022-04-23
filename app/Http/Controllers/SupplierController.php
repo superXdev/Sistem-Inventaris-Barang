@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Supplier;
 use Illuminate\Http\Request;
+use App\Http\Requests\SupplierRequest;
 
 class SupplierController extends Controller
 {
@@ -21,7 +22,7 @@ class SupplierController extends Controller
     	return view('admin.supplier.index', compact('data'));
     }
 
-    public function store(Supplier $supplier, Request $request)
+    public function store(Supplier $supplier, SupplierRequest $request)
     {
     	$supplier->create($request->all());
 
@@ -35,16 +36,16 @@ class SupplierController extends Controller
     	return $data;
     }
 
-    public function update(Supplier $supplier, Request $request)
+    public function update(Supplier $supplier, SupplierRequest $request)
     {
     	$supplier->find($request->id)->update($request->all());
 
     	return back()->with('success', 'Supplier berhasil di update');
     }
 
-    public function destroy(Supplier $supplier, Request $request)
+    public function destroy(Supplier $supplier, $id)
     {
-    	$data = $supplier->find($request->id);
+    	$data = $supplier->find($id);
     	$data->delete();
 
     	return back();

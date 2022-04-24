@@ -1,49 +1,36 @@
-# QAdmin
-a free, open-source dashboard panel starter kit for Laravel. Just intall and everything is ready
+# Intro
+Sistem inventaris berbasis website, bebas digunakan untuk kebutuhan apa saja
 
 ![App Screenshot](https://github.com/superXdev/QAdmin/blob/main/public/dist/img/screenshot/ss.png?raw=true)
-
   
 
 ## Tech Stack
 
 **Client:** [ruangAdmin](https://github.com/indrijunanda/RuangAdmin), Bootstrap, Jquery, filePond
 
-**Server:** PHP 7.3.x, Laravel 8.x
+**Server:** PHP 7.4.x, Laravel 8.x
 
   
-## Dependencies
+## Menu
 
-- [Laravel Breeze](https://github.com/laravel/breeze)
-- [spatie/laravel-permission](https://github.com/spatie/laravel-permission)
-- [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog)
-- [akaunting/laravel-setting](https://github.com/akaunting/laravel-setting)
-- [Laravel Modules](https://nwidart.com/laravel-modules/v1)
-
-  
-## Features
-
-- ruangAdmin template
-- Authentication with Laravel Breeze
-- User & Roles management
-- Activity logs
-- Settings menu
-- 15 laravel components ready-to-use
-- Laravel modules
-- Unit testing
+- Dashboard
+- Daftar petugas (admin, staff gudang/barang)
+- Daftar barang
+- Daftar gudang
+- Barang masuk
+- Barang keluar
+- Laporan
+- Profile (ganti pp & password)
   
 ## Installation 
 
 You can fork or clone this project
 
-``` 
-git clone git@github.com:superXdev/QAdmin.git
-cd QAdmin
+```
 composer install
 cp .env.example .env <-- edit db config
-php artisan admin:install
+php artisan install
 ```
-That's it!
 
 ## Running Tests
 
@@ -54,10 +41,10 @@ php artisan test
 ```
 
 ```
-Tests:  29 passed
-Time:   7.58s
+Tests:  44 passed
+Time:   20.30s
 ```
 
 ## License
 
-QAdmin is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). 
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). 

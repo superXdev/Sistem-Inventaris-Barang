@@ -11,14 +11,14 @@ class AdminInstallerCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'admin:install';
+    protected $signature = 'install';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install fresh admin dashboard';
+    protected $description = 'Install fresh setup';
 
     /**
      * Create a new command instance.

@@ -20,6 +20,7 @@ Sistem inventaris berbasis website, bebas digunakan untuk kebutuhan apa saja
 - Daftar petugas (admin, staff gudang/barang)
 - Daftar barang
 - Daftar gudang
+- Daftar supplier
 - Barang masuk
 - Barang keluar
 - Laporan

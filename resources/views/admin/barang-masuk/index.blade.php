@@ -49,7 +49,7 @@
 	{{-- add model --}}
 	<x-modal>
 		<x-slot name="title">
-			<h6 class="m-0 font-weight-bold text-primary">Tambahkan Supplier</h6>
+			<h6 class="m-0 font-weight-bold text-primary">Tambahkan yang masuk</h6>
 		</x-slot>
 		<x-slot name="id">add</x-slot>
 
